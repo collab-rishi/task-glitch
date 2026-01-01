@@ -75,6 +75,7 @@ export default function TaskForm({ open, onClose, onSubmit, existingTitles, init
       timeTaken: safeTime,
       priority: ((priority || 'Medium') as Priority),
       status: ((status || 'Todo') as Status),
+      createdAt: initial?.createdAt || new Date().toISOString(),
       notes: notes.trim() || undefined,
       ...(initial ? { id: initial.id } : {}),
     };
